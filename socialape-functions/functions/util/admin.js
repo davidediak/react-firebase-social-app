@@ -1,7 +1,7 @@
 const admin = require('firebase-admin');
-const serviceAccount = require('../../socialape-a1ae6-firebase-adminsdk-oiea7-fd2da9ba35.json');
+//const serviceAccount = require('../../socialape-a1ae6-firebase-adminsdk-oiea7-fd2da9ba35.json');
 
-if (serviceAccount) {
+if (false) {
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: 'https://socialape.firebaseio.com'
