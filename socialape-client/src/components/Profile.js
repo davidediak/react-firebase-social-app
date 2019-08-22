@@ -13,8 +13,10 @@ import LinkIcon from '@material-ui/icons/Link';
 import dayjs from 'dayjs';
 import IconButton from '@material-ui/core/IconButton';
 import EditIcon from '@material-ui/icons/Edit';
+import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
 import ToolTip from '@material-ui/core/Tooltip';
 import { logoutUser, uploadImage } from '../redux/actions/userActions';
+import EditDetails from './EditDetails';
 const styles = theme => ({
   paper: {
     padding: 20
@@ -73,6 +75,9 @@ export class Profile extends Component {
   handleEditPicture = () => {
     const fileInput = document.getElementById('imageInput');
     fileInput.click();
+  };
+  handleLogout = () => {
+    this.props.logoutUser();
   };
   render() {
     const {
@@ -134,31 +139,37 @@ export class Profile extends Component {
               <CalendarToday color="primary" />{' '}
               <span>Joined {dayjs(createdAt).format('MMM YYYY')}</span>
             </div>
+            <ToolTip title="Logout" placement="top">
+              <IconButton onClick={this.handleLogout}>
+                <KeyboardReturn color="primary" />
+              </IconButton>
+            </ToolTip>
+            <EditDetails />
           </div>
         </Paper>
       ) : (
         <Paper className={classes.paper}>
           <Typography variant="body2" align="center">
             No profile found, please login again!
-            <div className={classes.buttons}>
-              <Button
-                variant="contained"
-                color="primary"
-                component={Link}
-                to="/login"
-              >
-                Login
-              </Button>
-              <Button
-                variant="contained"
-                color="secondary"
-                component={Link}
-                to="/signup"
-              >
-                Signup
-              </Button>
-            </div>
           </Typography>
+          <div className={classes.buttons}>
+            <Button
+              variant="contained"
+              color="primary"
+              component={Link}
+              to="/login"
+            >
+              Login
+            </Button>
+            <Button
+              variant="contained"
+              color="secondary"
+              component={Link}
+              to="/signup"
+            >
+              Signup
+            </Button>
+          </div>
         </Paper>
       )
     ) : (
