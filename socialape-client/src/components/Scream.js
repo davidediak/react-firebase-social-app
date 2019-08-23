@@ -16,8 +16,11 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 
 import MyButton from '../util/MyButton';
+import DeleteScream from './DeleteScream';
+
 const styles = {
   card: {
+    position: 'relative',
     display: 'flex',
     marginBottom: 20
   },
@@ -61,7 +64,10 @@ export class Scream extends Component {
         likeCount,
         commentCount
       },
-      user: { authenticated }
+      user: {
+        authenticated,
+        credentials: { handle }
+      }
     } = this.props;
     const likeButton = !authenticated ? (
       <MyButton tip="Like">
@@ -78,6 +84,10 @@ export class Scream extends Component {
         <FavoriteBorderIcon color="primary" />
       </MyButton>
     );
+    const deleteButton =
+      authenticated && userHandle === handle ? (
+        <DeleteScream screamId={screamId} />
+      ) : null;
     return (
       <Card className={classes.card}>
         <CardMedia
@@ -94,6 +104,7 @@ export class Scream extends Component {
           >
             {userHandle}
           </Typography>
+          {deleteButton}
           <Typography variant="body2" title={createdAt} color="textSecondary">
             {dayjs(createdAt).fromNow()}
           </Typography>
