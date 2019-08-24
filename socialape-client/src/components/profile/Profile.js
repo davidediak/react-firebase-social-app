@@ -13,9 +13,9 @@ import LinkIcon from '@material-ui/icons/Link';
 import dayjs from 'dayjs';
 import EditIcon from '@material-ui/icons/Edit';
 import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
-import { logoutUser, uploadImage } from '../redux/actions/userActions';
+import { logoutUser, uploadImage } from '../../redux/actions/userActions';
 import EditDetails from './EditDetails';
-import MyButton from '../util/MyButton';
+import MyButton from '../../util/MyButton';
 const styles = theme => ({
   paper: {
     padding: 20

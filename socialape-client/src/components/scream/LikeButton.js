@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 //MUI
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import { likeScream, unlikeScream } from '../redux/actions/dataActions';
+import { likeScream, unlikeScream } from '../../redux/actions/dataActions';
 
-import MyButton from '../util/MyButton';
+import MyButton from '../../util/MyButton';
 
 class LikeButton extends Component {
   likedScream = () => {
