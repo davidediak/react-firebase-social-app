@@ -4,7 +4,8 @@ import {
   LIKE_SCREAM,
   UNLIKE_SCREAM,
   DELETE_SCREAM,
-  POST_SCREAM
+  POST_SCREAM,
+  SET_SCREAM
 } from '../types';
 
 const initialState = {
@@ -59,6 +60,11 @@ export default function(state = initialState, action) {
         screams: [action.payload, ...state.screams]
       };
     }
+    case SET_SCREAM:
+      return {
+        ...state,
+        scream: action.payload
+      };
     default:
       return state;
   }
