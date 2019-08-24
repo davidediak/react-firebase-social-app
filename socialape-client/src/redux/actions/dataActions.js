@@ -89,7 +89,7 @@ export const getScream = screamId => dispatch => {
     .get('/scream/' + screamId)
     .then(res => {
       dispatch({ type: SET_SCREAM, payload: res.data });
+      dispatch({ type: STOP_LOADING_UI });
     })
     .catch(err => console.log(err));
-  dispatch({ type: STOP_LOADING_UI });
 };

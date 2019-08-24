@@ -32,6 +32,8 @@ export default function(state = initialState, action) {
         scream => scream.screamId === action.payload.screamId
       );
       state.screams[index].likeCount = action.payload.likeCount;
+      if (state.scream.screamId === action.payload.screamId)
+        state.scream = action.payload;
       return {
         ...state
       };
@@ -41,6 +43,8 @@ export default function(state = initialState, action) {
         scream => scream.screamId === action.payload.screamId
       );
       state.screams[index].likeCount = action.payload.likeCount;
+      if (state.scream.screamId === action.payload.screamId)
+        state.scream = action.payload;
       return {
         ...state
       };
