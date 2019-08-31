@@ -5,6 +5,6 @@ Backend: Firebase, express
 
 ## How to run
 1- Add https://europe-west1-socialape-d081e.cloudfunctions.net/api as the 'proxy' value in package.json  
-2-  
-`npm install`
-`npm start`
+2- `npm install`  
+3- `npm start`  
+4- go to http://localhost:3000
