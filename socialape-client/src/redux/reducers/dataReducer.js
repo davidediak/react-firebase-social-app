@@ -34,7 +34,7 @@ export default function(state = initialState, action) {
       );
       state.screams[index].likeCount = action.payload.likeCount;
       if (state.scream.screamId === action.payload.screamId)
-        state.scream = action.payload;
+        state.scream = { ...state.scream, ...action.payload };
       return {
         ...state
       };
