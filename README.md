@@ -1,6 +1,6 @@
 # App created for React ( && Firebase) training purposes
 ## Important: I'm not the creator of this project, i followed this [Classed playlist](https://www.youtube.com/playlist?list=PLMhAeHCz8S38ryyeMiBPPUnFAiWnoPvWP)
-Frontend: React,Redux, MaterialUI.  
+Frontend: React ,Redux, MaterialUI.  
 Backend: Firebase, express  
 
 ## How to run
