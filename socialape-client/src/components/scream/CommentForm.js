@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
 //MUI
@@ -8,7 +8,6 @@ import TextField from '@material-ui/core/TextField';
 //Redux
 import { connect } from 'react-redux';
 import { submitComment } from '../../redux/actions/dataActions';
-import { CLEAR_ERRORS } from '../../redux/types';
 
 const styles = theme => ({
   ...theme.spreadableStyles
